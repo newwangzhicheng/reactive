@@ -132,14 +132,17 @@ function computed(getter) {
   return obj
 }
 
-const sumRes = computed(() => obj.foo + obj.bar)
+const sumRes = computed(() => {
+  console.log('触发了computed');
+  return obj.foo + obj.bar
+})
 
-console.log(sumRes.value)
-console.log(sumRes.value)
+// console.log(sumRes.value)
+// console.log(sumRes.value)
 
-obj.foo++
+// obj.foo++
 
-console.log(sumRes.value)
+// console.log(sumRes.value)
 
 effect(() => {
   console.log(sumRes.value)

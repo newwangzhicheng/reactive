@@ -140,8 +140,8 @@ function computed(getter) {
              * ! 在依赖的响应值修改的时候手动trigger
              */
             if(!dirty) {
-                trigger(obj, 'value');
                 dirty = true;
+                trigger(obj, 'value');
             }
         }
     });
